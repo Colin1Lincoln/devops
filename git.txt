@@ -5,6 +5,9 @@ $ git init /home/user/my_project
 $ git config --global user.name "Colin1Lincoln"
 $ git config --global user.email "typer-nsx@mail.ru"
 
+### Авторизация в репозитории
+$ git remote set-url origin *ssh@*
+
 ### Просмотр конфиг листа
 $ git config --list --show-origin
 
