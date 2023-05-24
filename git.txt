@@ -41,8 +41,6 @@ $ git branch
 # удалить ветку
 $ git branch --delete my_branch
 
-# Удалить remote ветку
-$ git push --delete origin my_branch
 
 # удалить remote branch
 $ git push origin --delete my_branch
