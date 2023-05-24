@@ -1,0 +1,13 @@
+!/bin/bash
+
+useradd -m -d /home/colin -s /bin/bash -U colin
+
+sudo usermod -aG sudo colin
+
+mkdir /home/colin/.ssh
+
+touch /home/colin/.ssh/authorized_keys
+
+chown -R colin:colin /home/colin/
+
+echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCfFBWq7+j8fpxZQY8Q4aWwFNm3xON9DQgAYszGiKsn01S1mNQkoiDqfUPsWVMt9QRjAeRjedivbvkJobkmMR1opfIl9yENPDlZwctz5RJkVlmyhI+3Gkuqq28xmD4Ra34cDpl/uTqhsXDOBhdxGC3aTypbPyG+k0SxGurORr+0uesfct7wILWTVrHbArJt/4sZ8sJ+2ykdVvvQmUo/iLdfxR97lR7xoqwG7pTj9ZMmldAbioHffFLYwM8hLpIHZsw5EkAPxaH47h1F4+yxceWUUSogT3idN2CWmGfZeJ9CTIB667nlhPZo4Q8u5IFC+pV0Wiy0l+5QVnUNa9dWQUyY/c42kgLZLtJdPfz7m4XVUUV1lm1rfso+1zaQb6WnGqP0arutbEKOdfPRAHppskxX3JjuwUKjnQ9tu0037tP7Bi8kl8FsZs19IqarbfmH/IEH0BtqOLYDUZKKUI7P6fOkWjUzfITF2TUeEQ3hR147jM96SbHqIGJRNba68N4o7yE= colin@ubuntu > /home/colin/.ssh/authorized_keys

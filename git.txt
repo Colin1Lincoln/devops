@@ -1,0 +1,102 @@
+### Инициализировать директорию для работы с git
+$ git init /home/user/my_project
+
+### Добавить данные пользователя
+$ git config --global user.name "Colin1Lincoln"
+$ git config --global user.email "typer-nsx@mail.ru"
+
+### Просмотр конфиг листа
+$ git config --list --show-origin
+
+### Работа с untracked, staged, commit
+# при создании файла, он имеет статус untracked
+# проверка состояния
+$ git status
+
+# добавление в stanged
+$ git add *
+
+# Коммит файла (снимок состояния)
+$ git commit -m "message"
+
+# Отправка в remote репозиторий
+$ git push origin
+
+# Отправка в remote принудительно (если есть различия, минуя rebase)
+$ git push --force
+
+### Удаление файла
+$ git rm file1
+
+### Работа с branch
+# создать ветку
+$ git branch my_branch
+
+# покажет ветки
+$ git branch 
+
+# удалить ветку
+$ git branch --delete my_branch
+
+# Удалить remote ветку
+$ git push --delete origin my_branch
+
+# удалить remote branch
+$ git push origin --delete my_branch
+
+### CHECKOUT
+# перейти на ветку
+$ git checkout my_branch
+
+# создать и переключиться на ветку
+$ git checkout -b my_branch
+
+# Просмотр прошлых версии
+$ git checkout 8cf...7f5  ### где 8cf...7f5 хэш комита
+
+### Находясь на main ветки, стянуть с my_branch ветки
+$ git merge my_branch
+
+### Показать git log в удобочитаемом формате
+$ git log --pretty=oneline
+
+### Откатиться до хэша (8cf...7f5) или на несколько версий назад
+$ git reset --hard HEAD~1 (откатить файлы на предыдущий коммит)
+$ git reset --hard 8cf...7f5 (откатить файлы до хэша конкретного коммита)
+
+### Удалить commit'ы
+$ git reset --soft HEAD~3   ### где ~3, показывает 3 комита назад
+$ git reset --soft 8cf...7f5   ### удалит все коммиты в log, до 8cf...7f5
+
+$ git checkout master # вернуться к последнему коммиту в указанной ветке
+
+### Отправить изменения с ветки my_branch в main(origin)
+$ git push origin my_branch
+
+# Отправить в remote локально созданный branch
+$ git push --set-upstream origin my_branch
+
+### Или так же можно стянуть находясь на main с my_branch
+$ git merge my_branch
+
+### Добавить ТЭГИ
+# Просмотр тегов
+$ git tag
+
+# Создать тэг
+$ git tag my_tag
+
+# После создания тэга, необходимо отравить в remote
+$ git push origin my_tag
+
+### Запушить все созданные тэги
+$ git push origin --tags
+
+# Чтобы добавить тэг на commit, который был создан ранее (можно увидеть в git log)
+$ git tag -a v.1.5.0 8cf...7f5   ### где, 8cf...7f5 хэш конкретного коммита файла
+
+### Чтобы стереть и перезаписать последний коммит
+# Сначала
+$ git reset --hard HEAD~1
+# затем
+$ git push origin my_branch --force

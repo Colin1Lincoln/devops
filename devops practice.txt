@@ -1,0 +1,6 @@
+ DevOps:
+ Работа с IaC через terraform и ansible - завершил на 47 минуте. Необходимо повторить Demo по Ansible
+ 
+ token:
+ "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2ODQ3NTc2MjgsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoic3R1ZGVudCJ9.1KyJLr5MON7cj06OhEDe6lGl39ikiEXPoZAzTiO_3Hs"
+ 
